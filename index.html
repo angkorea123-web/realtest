@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing</title>
+
+<style>
+
+body{
+  margin:0;
+  background:black;
+  color:white;
+  font-family:sans-serif;
+  display:flex;
+  justify-content:center;
+}
+
+/* 전체 영역 */
+
+.container{
+  width:100%;
+  max-width:1200px;
+  text-align:center;
+}
+
+/* 영상 영역 */
+
+.video-wrapper{
+  position:relative;
+  margin-top:40px;
+}
+
+/* 영상 */
+
+.video-wrapper video{
+  width:100%;
+  border-radius:8px;
+}
+
+/* 블러 가장자리 */
+
+.video-wrapper::after{
+  content:"";
+  position:absolute;
+  inset:-60px;
+
+  background:radial-gradient(
+      ellipse at center,
+      rgba(0,0,0,0) 40%,
+      rgba(0,0,0,0.6) 70%,
+      rgba(0,0,0,1) 90%
+  );
+
+  pointer-events:none;
+}
+
+/* 메시지 */
+
+.headline{
+  margin-top:30px;
+  font-size:32px;
+  font-weight:bold;
+}
+
+/* 버튼 */
+
+.cta{
+  margin-top:25px;
+  padding:18px 60px;
+  font-size:22px;
+  border:none;
+  border-radius:12px;
+  background:#1e90ff;
+  color:white;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.cta:hover{
+  transform:scale(1.05);
+  background:#0b63d1;
+}
+
+/* 모바일 */
+
+@media (max-width:768px){
+
+.video-wrapper{
+  margin-top:10px;
+}
+
+.headline{
+  font-size:22px;
+  padding:0 20px;
+}
+
+.cta{
+  font-size:18px;
+  padding:16px 40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="video-wrapper">
+
+<video autoplay muted loop playsinline>
+<source src="video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<div class="headline">
+지금 바로 경험해보세요
+</div>
+
+<button class="cta"
+onclick="location.href='https://example.com/login'">
+사이트 접속하기
+</button>
+
+</div>
+
+</body>
+</html>
